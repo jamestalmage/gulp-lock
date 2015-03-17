@@ -5,8 +5,10 @@ coverage
 jasmine-1*.js
 JasmineAdapter-1*.js
 
-# npmignore
+# npmignore - content above this line is automatically generated and modifications may be omitted
+# see npmjs.com/npmignore for more details.
 test
 gulpfile.js
 gulpfile-test.js
 mocha-globals.js
+.travis.yml

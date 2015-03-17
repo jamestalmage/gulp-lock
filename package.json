@@ -4,7 +4,7 @@
   "description": "run tasks exclusively (i.e. synchronously). gulp task friendly.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r mocha-globals.js"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
