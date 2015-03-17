@@ -1,0 +1,9 @@
+.idea
+node_modules
+coverage
+*.log
+jasmine-1*.js
+JasmineAdapter-1*.js
+
+# npmignore
+test

@@ -1,0 +1,38 @@
+{
+  "name": "exclusive-task",
+  "version": "0.0.1",
+  "description": "run tasks exclusively (i.e. synchronously). gulp task friendly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r mocha-globals.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamestalmage/exclusive-task.git"
+  },
+  "author": "James Talmage <james@talmage.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamestalmage/exclusive-task/issues"
+  },
+  "homepage": "https://github.com/jamestalmage/exclusive-task",
+  "dependencies": {
+    "bluebird": "^2.9.14",
+    "end-of-stream": "^1.1.0",
+    "stream-consume": "^0.1.0"
+  },
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "gulp": "^3.8.11",
+    "gulp-jscs": "^1.4.0",
+    "gulp-jshint": "^1.9.2",
+    "gulp-mocha": "^2.0.0",
+    "gutil": "^1.6.4",
+    "jscs": "^1.11.3",
+    "jshint": "^2.6.3",
+    "mocha": "^2.2.1",
+    "proxyquire": "^1.4.0",
+    "sinon": "^1.14.0",
+    "sinon-chai": "^2.7.0"
+  }
+}
