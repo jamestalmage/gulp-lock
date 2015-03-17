@@ -28,11 +28,10 @@
     "gulp-jscs": "^1.4.0",
     "gulp-jshint": "^1.9.2",
     "gulp-mocha": "^2.0.0",
-    "gutil": "^1.6.4",
+    "gulp-util": "^3.0.4",
     "jscs": "^1.11.3",
     "jshint": "^2.6.3",
     "mocha": "^2.2.1",
-    "proxyquire": "^1.4.0",
     "sinon": "^1.14.0",
     "sinon-chai": "^2.7.0",
     "vinyl-transform": "^1.0.0"
