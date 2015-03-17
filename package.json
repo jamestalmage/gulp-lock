@@ -19,11 +19,12 @@
   "dependencies": {
     "bluebird": "^2.9.14",
     "end-of-stream": "^1.1.0",
-    "stream-consume": "^0.1.0"
+    "through": "^2.3.6"
   },
   "devDependencies": {
     "chai": "^2.1.2",
     "gulp": "^3.8.11",
+    "gulp-cat": "^0.3.2",
     "gulp-jscs": "^1.4.0",
     "gulp-jshint": "^1.9.2",
     "gulp-mocha": "^2.0.0",
@@ -33,6 +34,7 @@
     "mocha": "^2.2.1",
     "proxyquire": "^1.4.0",
     "sinon": "^1.14.0",
-    "sinon-chai": "^2.7.0"
+    "sinon-chai": "^2.7.0",
+    "vinyl-transform": "^1.0.0"
   }
 }

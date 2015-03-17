@@ -3,6 +3,7 @@ var jshint = require('gulp-jshint');
 var jscs   = require('gulp-jscs');
 var mocha  = require('gulp-mocha');
 var gutil = require('gulp-util');
+require('./gulpfile-test.js');
 
 var paths = {
   sources: ['index.js'],
@@ -68,6 +69,6 @@ gulp.task('watch', function() {
     ['lint-sources-watchable', 'test-watchable']);
 });
 
-gulp.task('default', ['test']);
+gulp.task('default', ['test', 'gulp-test']);
 
 function noop() {}

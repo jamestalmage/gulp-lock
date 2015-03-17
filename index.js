@@ -3,7 +3,7 @@ module.exports = create;
 var Promise = require('bluebird');
 var assert = require('assert');
 var eos = require('end-of-stream');
-var consume = require('stream-consume');
+var through = require('through');
 
 function create() {
   var currentPromise = Promise.resolve(true);
@@ -20,7 +20,7 @@ function create() {
 
     return function(cb) {
       var oldPromise = currentPromise;
-      var args = Array.prototype.slice(arguments);
+      var args = Array.prototype.slice.call(arguments);
       var self = this;
       currentPromise = new Promise(function(resolve, reject) {
         args[0] = function(err) {
@@ -46,7 +46,7 @@ function create() {
   function wrapPromiseReturningTask(func) {
     return function() {
       var oldPromise = currentPromise;
-      var args = Array.prototype.slice(arguments);
+      var args = Array.prototype.slice.call(arguments);
       var self = this;
       var resolve2;
       var reject2;
@@ -58,12 +58,12 @@ function create() {
               'expected a promise returning task');
             r.then(
               function(result) {
-                resolve(true);
                 resolve2(result);
+                resolve(true);
               },
               function(err) {
-                reject(err);
                 reject2(err);
+                reject(err);
               }
             );
           },
@@ -83,8 +83,9 @@ function create() {
   function wrapStreamReturningTask(func) {
     return function() {
       var oldPromise = currentPromise;
-      var args = Array.prototype.slice(arguments);
+      var args = Array.prototype.slice.call(arguments);
       var self = this;
+      var ps = through();
       currentPromise = new Promise(function(resolve, reject) {
         oldPromise.then(
           function(result) {
@@ -105,15 +106,14 @@ function create() {
               }
             );
 
-            consume(r);
-            return r;
+            r.pipe(ps);
           },
           function(err) {
             //TODO: How to handle errors
           }
         );
-
       });
+      return ps;
     };
   }
 }
