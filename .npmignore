@@ -7,3 +7,6 @@ JasmineAdapter-1*.js
 
 # npmignore
 test
+gulpfile.js
+gulpfile-test.js
+mocha-globals.js
