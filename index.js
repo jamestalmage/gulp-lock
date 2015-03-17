@@ -1,10 +1,11 @@
 module.exports = create;
+var lib = require('./lib');
 
 function create() {
-  var nextPromise = require('./lib/nextPromise')();
+  var nextPromise = lib.nextPromise();
   return {
-    cb: require('./lib/callback')(nextPromise),
-    promise: require('./lib/promise')(nextPromise),
-    stream: require('./lib/stream')(nextPromise)
+    cb: lib.cb(nextPromise),
+    promise: lib.promise(nextPromise),
+    stream: lib.stream(nextPromise)
   };
 }
