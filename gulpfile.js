@@ -6,7 +6,7 @@ var gutil = require('gulp-util');
 require('./gulpfile-test.js');
 
 var paths = {
-  sources: ['index.js'],
+  sources: ['index.js', 'lib/*.js'],
   tests: ['test/*.js']
 };
 
@@ -69,6 +69,6 @@ gulp.task('watch', function() {
     ['lint-sources-watchable', 'test-watchable']);
 });
 
-gulp.task('default', ['test', 'gulp-test']);
+gulp.task('default', ['lint-source', 'test', 'gulp-test']);
 
 function noop() {}
