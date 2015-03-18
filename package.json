@@ -1,7 +1,7 @@
 {
   "name": "gulp-lock",
   "version": "0.0.1",
-  "description": "run tasks exclusively (i.e. synchronously). gulp task friendly.",
+  "description": "control concurrency of gulp tasks.",
   "main": "index.js",
   "scripts": {
     "test": "gulp"
