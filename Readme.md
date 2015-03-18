@@ -46,11 +46,13 @@ gulp.task('net-task1', ['dependency'], networkLock.cb(function(cb) {
 A lock object provides three different wrapper methods for your task.
 
 1. `lock.cb(taskFunc)` wraps a task method that takes a completion callback.
-    Once the concurrency limit is reached, tasks will queue until tasks signal
-    completion by calling the provided callback.
+    Once the concurrency limit is reached, tasks will queue until a task
+    releases it's hold on the lock by calling the callback.
 2. `lock.stream(taskFunc)` wraps a task method that returns a stream.
-    (i.e. `return gulp.src(...)`).
-3. `lock.promise(taskFunc)` wraps a task that returns a promise.
+    (i.e. `return gulp.src(...)`). A task releases its hold on a lock
+    when the returned stream ends.
+3. `lock.promise(taskFunc)` wraps a task that returns a promise. Tasks
+    release their hold on the lock when the promise is resolved.
 
 These are the three forms of asynchronous tasks allowed by gulps orchestrator,
 so you should be able to wrap any async task with minimal effort. Gulp
