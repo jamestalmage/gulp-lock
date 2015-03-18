@@ -63,3 +63,14 @@ so there would be no point in providing a wrapper.
 Tasks are queued for execution for by gulps orchestrator. Whichever task
 has it's dependencies met first will be queued first. This is an attempt to
 maximize concurrency (within the limits set by the lock).
+
+###not really a gulp plugin
+
+While this is listed as a gulp plugin, it actually has no dependency on gulp
+or any vinyl libraries. It can be used to control concurrency for any async
+functions that either:
+
+1. take a callback as their first arg.
+2. return a promise.
+3. return a stream.
+
