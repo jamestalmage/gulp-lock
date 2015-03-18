@@ -73,4 +73,3 @@ functions that either:
 1. take a callback as their first arg.
 2. return a promise.
 3. return a stream.
-
