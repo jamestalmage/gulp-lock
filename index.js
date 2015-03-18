@@ -1,8 +1,8 @@
 module.exports = create;
 var lib = require('./lib');
 
-function create() {
-  var nextPromise = lib.nextPromise();
+function create(depth) {
+  var nextPromise = lib.nextPromise(depth);
   return {
     cb: lib.cb(nextPromise),
     promise: lib.promise(nextPromise),

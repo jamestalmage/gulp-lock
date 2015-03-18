@@ -7,7 +7,7 @@ require('./gulpfile-test.js');
 
 var paths = {
   sources: ['index.js', 'lib/*.js'],
-  tests: ['test/*.js']
+  tests: ['test/*Spec.js']
 };
 
 function lintedChain(sources, watch) {
