@@ -64,7 +64,9 @@ Tasks are queued for execution for by gulps orchestrator. Whichever task
 has it's dependencies met first will be queued first. This is an attempt to
 maximize concurrency (within the limits set by the lock).
 
-###unlimited
+unlimited
+----------
+
 The "unlimited" lock provides a convenient way to disable the effects of
 `gulp-lock`. It provides an identical api to the normal locks, but all wrapper
 functions are actually identity functions that just return the function without
@@ -83,7 +85,8 @@ var myLock = process.env.TRAVIS ? lock(1) : lock.unlimited;
 gulp.task('myTask', myLock.stream(function(){/*...*/});
 ```
 
-###not really a gulp plugin
+not really a gulp plugin
+------------------------
 
 While this is listed as a gulp plugin, it actually has no dependency on gulp
 or any vinyl libraries. It can be used to control concurrency for any async
