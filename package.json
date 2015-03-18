@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jamestalmage/exclusive-task.git"
+    "url": "https://github.com/jamestalmage/gulp-lock.git"
   },
   "author": "James Talmage <james@talmage.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jamestalmage/exclusive-task/issues"
+    "url": "https://github.com/jamestalmage/gulp-lock/issues"
   },
-  "homepage": "https://github.com/jamestalmage/exclusive-task",
+  "homepage": "https://github.com/jamestalmage/gulp-lock",
   "dependencies": {
     "bluebird": "^2.9.14",
     "end-of-stream": "^1.1.0",
