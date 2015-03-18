@@ -64,6 +64,25 @@ Tasks are queued for execution for by gulps orchestrator. Whichever task
 has it's dependencies met first will be queued first. This is an attempt to
 maximize concurrency (within the limits set by the lock).
 
+###unlimited
+The "unlimited" lock provides a convenient way to disable the effects of
+`gulp-lock`. It provides an identical api to the normal locks, but all wrapper
+functions are actually identity functions that just return the function without
+wrapping it. A potential usage would be to only enforce concurrency restrictions
+on Travis. Travis vms often suffer from slower network/disk access than developer
+machines, and you are probably willing to trade reduced concurrency (i.e. speed)
+for added dependability on your travis build.
+
+```javascript
+var lock = require('gulp-lock');
+
+// only restrict concurrency on travis
+var myLock = process.env.TRAVIS ? lock(1) : lock.unlimited;
+
+// lock will have no affect outside of travis
+gulp.task('myTask', myLock.stream(function(){/*...*/});
+```
+
 ###not really a gulp plugin
 
 While this is listed as a gulp plugin, it actually has no dependency on gulp
