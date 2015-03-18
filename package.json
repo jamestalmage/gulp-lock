@@ -16,6 +16,18 @@
     "url": "https://github.com/jamestalmage/gulp-lock/issues"
   },
   "homepage": "https://github.com/jamestalmage/gulp-lock",
+  "keywords": [
+    "gulpplugin",
+    "runner",
+    "task",
+    "sequence",
+    "concurrent",
+    "concurrency",
+    "contention",
+    "flow",
+    "thunk",
+    "thunks"
+  ],
   "dependencies": {
     "bluebird": "^2.9.14",
     "end-of-stream": "^1.1.0",
