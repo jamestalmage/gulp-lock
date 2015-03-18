@@ -1,5 +1,5 @@
 {
-  "name": "exclusive-task",
+  "name": "gulp-lock",
   "version": "0.0.1",
   "description": "run tasks exclusively (i.e. synchronously). gulp task friendly.",
   "main": "index.js",
