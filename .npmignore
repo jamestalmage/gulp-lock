@@ -12,3 +12,6 @@ gulpfile.js
 gulpfile-test.js
 mocha-globals.js
 .travis.yml
+resource-contention.graffle
+resource-contention.png
+.jscsrc
